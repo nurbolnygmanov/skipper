@@ -1,9 +1,10 @@
 import { Button } from "@/components/button";
 import { Link } from "@/components/link";
-import { InspectionDto } from "@/testing/mocks/db";
 import { createColumnHelper } from "@tanstack/react-table";
+import { DeleteHandler } from "../../api/delete-inspection";
+import { Inspection } from "../../types";
 
-const columnHelper = createColumnHelper<InspectionDto>();
+const columnHelper = createColumnHelper<Inspection>();
 
 const baseColumn = [
   columnHelper.accessor("name", {
@@ -43,7 +44,11 @@ const baseColumn = [
   }),
 ];
 
-export const tableColumns = () =>
+type TableColumnProps = {
+  deleteRow: DeleteHandler;
+};
+
+export const tableColumns = ({ deleteRow }: TableColumnProps) =>
   baseColumn.concat(
     columnHelper.accessor("id", {
       header: "Delete",
@@ -51,7 +56,8 @@ export const tableColumns = () =>
         <Button
           variant="primary"
           onClick={() => {
-            console.log("deleted");
+            const inspectionId = info.row.original.id;
+            deleteRow(inspectionId);
           }}
         >
           Delete

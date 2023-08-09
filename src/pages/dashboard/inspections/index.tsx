@@ -5,6 +5,7 @@ import { InspecitonsList } from "@/features/inspections/components/inspections-l
 import { useUser } from "@/features/auth";
 import { DashboardLayout } from "@/layouts/dashboard-layout";
 import { Seo } from "@/components/seo";
+import { Link } from "@/components/link";
 
 export default function DashboardInspectionsPage() {
   const user = useUser();
@@ -15,6 +16,7 @@ export default function DashboardInspectionsPage() {
   return (
     <>
       <Seo title="Inspections" />
+      <Link href={"/dashboard/inspections/create"}>Create</Link>
       <InspecitonsList inspections={inspections.data} />
     </>
   );

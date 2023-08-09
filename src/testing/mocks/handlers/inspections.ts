@@ -16,7 +16,7 @@ const getInspectionHandler = rest.get(
   async (req, res, ctx) => {
     const inspectionId = req.params.inspectionId as string;
 
-    const job = db.inspection.findFirst({
+    const inspection = db.inspection.findFirst({
       where: {
         id: {
           equals: inspectionId,
@@ -24,7 +24,7 @@ const getInspectionHandler = rest.get(
       },
     });
 
-    if (!job) {
+    if (!inspection) {
       return res(
         ctx.delay(300),
         ctx.status(404),
@@ -32,8 +32,54 @@ const getInspectionHandler = rest.get(
       );
     }
 
-    return res(ctx.delay(300), ctx.status(200), ctx.json(job));
+    return res(ctx.delay(300), ctx.status(200), ctx.json(inspection));
   }
 );
 
-export const inspectionHandlers = [getInspectionHandler, getInspectionsHandler];
+const deleteInspectionHandler = rest.delete(
+  `${API_URL}/inspections/:inspectionId`,
+  async (req, res, ctx) => {
+    const inspectionId = req.params.inspectionId as string;
+
+    const deletedInspection = db.inspection.delete({
+      where: {
+        id: {
+          equals: inspectionId,
+        },
+      },
+    });
+
+    if (!deletedInspection) {
+      return res(
+        ctx.delay(300),
+        ctx.status(404),
+        ctx.json({ message: "Inspection not found!" })
+      );
+    }
+
+    return res(
+      ctx.delay(300),
+      ctx.status(200),
+      ctx.json({ message: "Inspection deleted successfully!" })
+    );
+  }
+);
+
+const createInspectionHandler = rest.post(
+  `${API_URL}/inspections`,
+  async (req, res, ctx) => {
+    const inspectionData = await req.json();
+
+    const inspection = db.inspection.create({
+      ...inspectionData,
+    });
+
+    return res(ctx.delay(300), ctx.status(200), ctx.json(inspection));
+  }
+);
+export const inspectionHandlers = [
+  getInspectionHandler,
+  getInspectionsHandler,
+  deleteInspectionHandler,
+  createInspectionHandler,
+];
