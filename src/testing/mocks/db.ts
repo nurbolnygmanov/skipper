@@ -3,6 +3,7 @@ import { factory, primaryKey } from "@mswjs/data";
 
 export type UserDto = {
   id: string;
+  name: string;
   createdAt: number;
   email: string;
   password: string;
@@ -24,9 +25,9 @@ const models = {
   user: {
     id: primaryKey(uid),
     createdAt: Date.now,
+    name: String,
     email: String,
     password: String,
-    organizationId: String,
   },
   inspection: {
     id: primaryKey(uid),

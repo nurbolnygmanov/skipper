@@ -5,7 +5,7 @@ import { InspecitonsList } from "@/features/inspections/components/inspections-l
 import { useUser } from "@/features/auth";
 import { DashboardLayout } from "@/layouts/dashboard-layout";
 
-export function DashboardInspectionsPage() {
+export default function DashboardInspectionsPage() {
   const user = useUser();
   const inspections = useInspections();
 
@@ -13,7 +13,7 @@ export function DashboardInspectionsPage() {
 
   return (
     <>
-      <InspecitonsList />
+      <InspecitonsList inspections={inspections.data} />
     </>
   );
 }

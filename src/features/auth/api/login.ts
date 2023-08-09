@@ -16,7 +16,6 @@ export function useLogin({ onSuccess }: UseLoginOptions) {
     mutationFn: login,
     onSuccess: ({ user }) => {
       queryClient.setQueryData(["auth-user"], user);
-      console.log(user);
       onSuccess?.(user);
     },
   });

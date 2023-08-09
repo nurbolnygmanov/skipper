@@ -19,7 +19,6 @@ export default function LoginData({ onSuccess }: LoginFormProps) {
   const login = useLogin({ onSuccess });
 
   function onSubmit(credentials: LoginData) {
-    console.log(credentials);
     login.submit(credentials);
   }
 
@@ -37,9 +36,10 @@ export default function LoginData({ onSuccess }: LoginFormProps) {
         {...register("password", { required: "Please provide password" })}
       />
       <ErrorMessage errors={errors} name="password" />
-      <Button variant="outline" type="submit" disabled={login.isLoading}>
+      {/* <Button variant="outline" type="submit" disabled={login.isLoading}>
         Log in
-      </Button>
+      </Button> */}
+      <button type="submit">Log in</button>
     </form>
   );
 }

@@ -7,7 +7,7 @@ export default function LoginPage() {
   const router = useRouter();
 
   function onSuccess() {
-    router.push("/dashboard/inspections");
+    router.replace("/dashboard/inspections");
   }
 
   return <LoginForm onSuccess={onSuccess} />;

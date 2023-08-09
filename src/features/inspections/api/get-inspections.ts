@@ -4,7 +4,7 @@ import { apiClient } from "@/lib/api-client";
 import { InspectionDto } from "@/testing/mocks/db";
 
 export function getInspections(): Promise<InspectionDto[]> {
-  return apiClient.get("/jobs");
+  return apiClient.get("/inspections");
 }
 
 export function useInspections() {

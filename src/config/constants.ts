@@ -1,4 +1,4 @@
-export const API_URL = "https://test.com";
+export const API_URL = "http://localhost:3000";
 
 export const IS_SERVER = typeof window === "undefined";
 export const IS_BROWSER = typeof window !== "undefined";

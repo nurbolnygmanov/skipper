@@ -5,6 +5,7 @@ export const testData = {
       createdAt: 1645628972465,
       email: "test@test.com",
       password: "test",
+      name: "Nurbol",
     },
   ],
   inspections: [
