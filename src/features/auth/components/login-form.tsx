@@ -19,7 +19,8 @@ export default function LoginData({ onSuccess }: LoginFormProps) {
   const login = useLogin({ onSuccess });
 
   function onSubmit(credentials: LoginData) {
-    // login.submit(credentials);
+    console.log(credentials);
+    login.submit(credentials);
   }
 
   return (

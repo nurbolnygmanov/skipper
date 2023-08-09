@@ -7,8 +7,7 @@ export default function LoginPage() {
   const router = useRouter();
 
   function onSuccess() {
-    const redirect = router.query.redirect as string;
-    router.replace(redirect || "/");
+    router.push("/dashboard/inspections");
   }
 
   return <LoginForm onSuccess={onSuccess} />;

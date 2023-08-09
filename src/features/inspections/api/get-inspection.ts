@@ -10,12 +10,12 @@ type GetInspectionOptions = {
 export function getInspection({
   inspectionId,
 }: GetInspectionOptions): Promise<InspectionDto> {
-  return apiClient.get(`/jobs/${inspectionId}`);
+  return apiClient.get(`/inspections/${inspectionId}`);
 }
 
 export function useInspection({ inspectionId }: GetInspectionOptions) {
   const { data, isLoading } = useQuery({
-    queryKey: ["jobs", inspectionId],
+    queryKey: ["inspections", inspectionId],
     queryFn: () => getInspection({ inspectionId }),
   });
 
