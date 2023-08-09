@@ -6,7 +6,7 @@ export type InputFieldProps = {
   type?: "text" | "email" | "password" | "textarea";
 } & Partial<UseFormRegisterReturn>;
 
-const InputField = forwardRef(function InputField(
+export const InputField = forwardRef(function InputField(
   props: InputFieldProps,
   ref: ForwardedRef<HTMLInputElement | null>
 ) {
@@ -21,5 +21,3 @@ const InputField = forwardRef(function InputField(
     </p>
   );
 });
-
-export default InputField;

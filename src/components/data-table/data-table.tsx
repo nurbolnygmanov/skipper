@@ -6,7 +6,7 @@ import {
 } from "@tanstack/react-table";
 import styles from "./data-table.module.css";
 
-type DataTableProps<T> = {
+export type DataTableProps<T> = {
   data: Array<T>;
   columns: Array<ColumnDef<T, any>>;
 };

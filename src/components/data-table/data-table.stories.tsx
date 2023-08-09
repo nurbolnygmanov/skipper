@@ -1,12 +1,25 @@
-import { Button } from "@/components/button";
-import { Link } from "@/components/link";
+import { Meta, StoryFn } from "@storybook/react";
+
+import { testData } from "../../testing/test-data";
+
+import { DataTable, DataTableProps } from "./data-table";
+import { Inspection } from "@/features/inspections/types";
+import { baseColumn } from "@/features/inspections/components/inspections-list/inspections-colums";
 import { createColumnHelper } from "@tanstack/react-table";
-import { DeleteHandler } from "../../api/delete-inspection";
-import { Inspection } from "../../types";
+import Link from "next/link";
+
+const meta: Meta = {
+  title: "Components/DataTable",
+  component: DataTable,
+};
+
+export default meta;
+
+const data = testData.inspections.slice(0, 5);
 
 const columnHelper = createColumnHelper<Inspection>();
 
-export const baseColumn = [
+const columns = [
   columnHelper.accessor("name", {
     header: "Name",
     cell: (info) => {
@@ -44,24 +57,20 @@ export const baseColumn = [
   }),
 ];
 
-type TableColumnProps = {
-  deleteRow: DeleteHandler;
+const Template: StoryFn<DataTableProps<Inspection>> = (props) => (
+  <DataTable {...props} />
+);
+
+export const Default = Template.bind({});
+
+Default.args = {
+  columns,
+  data,
 };
 
-export const tableColumns = ({ deleteRow }: TableColumnProps) =>
-  baseColumn.concat(
-    columnHelper.accessor("id", {
-      header: "Delete",
-      cell: (info) => (
-        <Button
-          variant="primary"
-          onClick={() => {
-            const inspectionId = info.row.original.id;
-            deleteRow(inspectionId);
-          }}
-        >
-          Delete
-        </Button>
-      ),
-    })
-  );
+export const Empty = Template.bind({});
+
+Empty.args = {
+  columns,
+  data: [],
+};
