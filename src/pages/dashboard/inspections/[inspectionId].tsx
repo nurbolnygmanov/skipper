@@ -4,6 +4,7 @@ import { ReactElement } from "react";
 import { DashboardLayout } from "@/layouts/dashboard-layout";
 import { useInspection } from "@/features/inspections/api/get-inspection";
 import InspectionInfo from "@/features/inspections/components/inspection-info/inspection-info";
+import { Seo } from "@/components/seo";
 
 const DashboardJobPage = () => {
   const router = useRouter();
@@ -21,6 +22,7 @@ const DashboardJobPage = () => {
 
   return (
     <>
+      <Seo title={`Inspection | ${inspection.data.name}`} />
       <InspectionInfo inspection={inspection.data} />
     </>
   );

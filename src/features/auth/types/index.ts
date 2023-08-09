@@ -4,5 +4,6 @@ export type LoginData = {
 };
 
 export type AuthUser = {
+  name: string;
   email: string;
 };

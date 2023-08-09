@@ -1,3 +1,4 @@
+import { Seo } from "@/components/seo/seo";
 import LoginForm from "@/features/auth/components/login-form";
 import AuthLayout from "@/layouts/auth-layout";
 import { useRouter } from "next/router";
@@ -10,7 +11,12 @@ export default function LoginPage() {
     router.replace("/dashboard/inspections");
   }
 
-  return <LoginForm onSuccess={onSuccess} />;
+  return (
+    <>
+      <Seo title="Log in" />
+      <LoginForm onSuccess={onSuccess} />
+    </>
+  );
 }
 
 LoginPage.getLayout = function (page: ReactElement) {
