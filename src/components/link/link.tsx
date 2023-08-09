@@ -6,7 +6,7 @@ export type LinkProps = {
   children: ReactNode;
 };
 
-export default function Link(props: LinkProps) {
+export function Link(props: LinkProps) {
   const { href, children } = props;
 
   return <NexLink href={href}>{children}</NexLink>;

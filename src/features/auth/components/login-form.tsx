@@ -1,11 +1,9 @@
-import Button from "@/components/button/button";
+import { Button } from "@/components/button/";
 import InputField from "@/components/form/input-field";
 import { useForm } from "react-hook-form";
 import { useLogin } from "../api/login";
-import { AuthUser } from "../types";
+import { AuthUser, LoginData } from "../types";
 import { ErrorMessage } from "@hookform/error-message";
-
-export type LoginData = { email: string; password: string };
 
 export type LoginFormProps = {
   onSuccess: (user: AuthUser) => void;

@@ -7,7 +7,7 @@ export type ButtonProps = {
   variant: Variant;
 } & ComponentProps<"button">;
 
-export default function Button(props: ButtonProps) {
+export function Button(props: ButtonProps) {
   const { children, variant, ...restProps } = props;
 
   return (
