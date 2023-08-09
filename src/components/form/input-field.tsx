@@ -16,7 +16,7 @@ const InputField = forwardRef(function InputField(
     <p>
       <label>
         {label}
-        <input type={type} {...inputProps} ref={ref} />
+        <input type={type} name={name} {...inputProps} ref={ref} />
       </label>
     </p>
   );

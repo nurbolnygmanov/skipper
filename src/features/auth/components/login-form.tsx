@@ -17,10 +17,11 @@ export default function LoginData({ onSuccess }: LoginFormProps) {
     handleSubmit,
     formState: { errors },
   } = useForm<LoginData>();
+
   const login = useLogin({ onSuccess });
 
   function onSubmit(credentials: LoginData) {
-    login.submit(credentials);
+    // login.submit(credentials);
   }
 
   return (
@@ -43,7 +44,3 @@ export default function LoginData({ onSuccess }: LoginFormProps) {
     </form>
   );
 }
-
-// label + input
-// react-hook-form
-// next router
