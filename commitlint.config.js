@@ -23,7 +23,7 @@ module.exports = {
       ["sentence-case", "start-case", "pascal-case", "upper-case"],
     ],
     "subject-empty": [2, "never"],
-    "subject-min-length": [2, "always", 35],
+    "subject-min-length": [2, "always", 20],
     "subject-full-stop": [2, "never", "."],
     "type-case": [2, "always", "lower-case"],
     "type-empty": [2, "never"],
