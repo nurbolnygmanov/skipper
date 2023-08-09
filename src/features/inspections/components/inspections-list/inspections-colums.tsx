@@ -8,9 +8,10 @@ const columnHelper = createColumnHelper<InspectionDto>();
 const baseColumn = [
   columnHelper.accessor("name", {
     header: "Name",
-    cell: (info) => (
-      <Link href={`inspections/${info.row.id}`}>{info.getValue()}</Link>
-    ),
+    cell: (info) => {
+      const rowId = info.row.original.id;
+      return <Link href={`inspections/${rowId}`}>{info.getValue()}</Link>;
+    },
   }),
   columnHelper.accessor((row) => row.company, {
     header: "Company",
