@@ -9,6 +9,7 @@ export type UserDto = {
 };
 
 export type InspectionDto = {
+  id: string;
   name: string;
   installationType: string;
   constructionYear: number;

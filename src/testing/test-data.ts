@@ -9,6 +9,7 @@ export const testData = {
   ],
   inspections: [
     {
+      id: "wS6UeppUQoiXGTzAI6XrM",
       name: "Inspection Paris 16eme",
       installationType: "Pipeline",
       constructionYear: 1951,
@@ -19,6 +20,7 @@ export const testData = {
       coating: "Poly Ethylene",
     },
     {
+      id: "Jkors1KGKA8Xk3-WIgKRW",
       name: "Inspection Marseille 7eme",
       installationType: "Pipeline",
       constructionYear: 1967,
@@ -29,6 +31,7 @@ export const testData = {
       coating: "Epoxy",
     },
     {
+      id: "2LJ_sgmy_880G9WivH5Hf",
       name: "Inspection Bordeaux-Mérignac",
       installationType: "Pipeline",
       constructionYear: 1991,
@@ -39,6 +42,7 @@ export const testData = {
       coating: "Poly Ethylene",
     },
     {
+      id: "dY8Q5uXxRtyH55sxThr_B",
       name: "Inspection Toulouse Ile du Ramier",
       installationType: "Pipeline",
       constructionYear: 1963,
@@ -49,6 +53,7 @@ export const testData = {
       coating: "Epoxy",
     },
     {
+      id: "fsOw03AoDm6do4udFZIbn",
       name: "Inspection Houston",
       installationType: "Pipeline",
       constructionYear: 1982,
@@ -59,6 +64,7 @@ export const testData = {
       coating: "Poly Ethylene",
     },
     {
+      id: "vyXO36A_L_fkPFVlAFGNm",
       name: "Inspection Kansas City River",
       installationType: "Pipeline",
       constructionYear: 1969,
