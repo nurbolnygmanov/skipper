@@ -5,5 +5,4 @@ export type LoginData = {
 
 export type AuthUser = {
   email: string;
-  organizationId: string;
 };

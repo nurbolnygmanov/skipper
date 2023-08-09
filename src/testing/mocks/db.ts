@@ -6,7 +6,6 @@ export type UserDto = {
   createdAt: number;
   email: string;
   password: string;
-  organizationId: string;
 };
 
 export type InspectionDto = {

@@ -1,54 +1,44 @@
 import { rest } from "msw";
+
 import { API_URL } from "@/config/constants";
-import { UserDto, db } from "../db";
-import { AuthUser } from "@/features/auth/types";
 
-type AuthData = {
-  email: string;
-  password: string;
-};
+import { authenticate, requireAuth, AUTH_COOKIE } from "../utils";
 
-export const loginHandler = rest.post(
+const loginHandler = rest.post(
   `${API_URL}/auth/login`,
   async (req, res, ctx) => {
     const credentials = await req.json();
     const { user, jwt } = authenticate(credentials);
 
     return res(
-      ctx.delay(500),
-
-      ctx.cookie("auth-token", jwt, {
+      ctx.delay(300),
+      ctx.cookie(AUTH_COOKIE, jwt, {
         path: "/",
         httpOnly: true,
       }),
-
       ctx.json({ user })
     );
   }
 );
 
-export const authHandlers = [loginHandler];
-
-export function authenticate({ email, password }: AuthData) {
-  const user = db.user.findFirst({
-    where: {
-      email: {
-        equals: email,
-      },
-    },
-  });
-
-  if (user?.password === password) {
-    const sanitizedUser = sanitizeUser(user);
-    return { user: sanitizedUser, jwt: "123456" };
+const logoutHandler = rest.post(
+  `${API_URL}/auth/logout`,
+  async (req, res, ctx) => {
+    return res(
+      ctx.delay(300),
+      ctx.cookie(AUTH_COOKIE, "", {
+        path: "/",
+        httpOnly: true,
+      }),
+      ctx.json({ success: true })
+    );
   }
+);
 
-  throw new Error("Invalid username or password");
-}
+const meHandler = rest.get(`${API_URL}/auth/me`, async (req, res, ctx) => {
+  const user = requireAuth({ req, shouldThrow: false });
 
-function sanitizeUser(user: UserDto): AuthUser {
-  const userCopy = { ...user };
+  return res(ctx.delay(300), ctx.json(user));
+});
 
-  const { password, ...result } = userCopy;
-  return result;
-}
+export const authHandlers = [loginHandler, logoutHandler, meHandler];
