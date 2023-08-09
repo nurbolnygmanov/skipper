@@ -1,4 +1,6 @@
+import { DataTable } from "@/components/data-table";
 import { InspectionDto } from "@/testing/mocks/db";
+import { tableColumns } from "./inspections-colums";
 
 type InspectionListProps = {
   inspections: InspectionDto[];
@@ -6,11 +8,8 @@ type InspectionListProps = {
 
 export function InspecitonsList(props: InspectionListProps) {
   const { inspections } = props;
-  return (
-    <ul>
-      {inspections.map((i) => (
-        <li key={i.id}>{i.name}</li>
-      ))}
-    </ul>
-  );
+
+  const inspectionsColumns = tableColumns();
+
+  return <DataTable columns={inspectionsColumns} data={inspections || []} />;
 }
