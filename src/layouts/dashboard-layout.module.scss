@@ -1,8 +1,7 @@
 .container {
-  max-width: 120rem;
-  margin: 4rem auto;
   background-color: var(--color-grey-light-2);
   box-shadow: var(--shadow-dark);
+  border-radius: 4px;
 
   min-height: 50rem;
 }
@@ -11,6 +10,9 @@
   height: 7rem;
   background-color: #fff;
   border-bottom: var(--color-grey-light-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .content {
@@ -19,12 +21,37 @@
 
 .sidebar {
   background-color: var(--color-grey-dark-1);
+  padding: 2rem;
+
+  li {
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--color-grey-light-1);
+  }
 
   flex: 0 0 18%;
 }
 
 .view {
   background-color: #fff;
-  background-color: orange;
   flex: 1;
+
+  height: 90vh;
+}
+
+.logo {
+  height: 3.25rem;
+}
+
+.usernav {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+
+  & > * {
+    padding-inline: 1rem;
+    cursor: pointer;
+  }
 }
