@@ -1,7 +1,7 @@
-import { InspectionDto } from "@/testing/mocks/db";
+import { Inspection } from "../../types";
 
 export type InspectionInfo = {
-  inspection: InspectionDto;
+  inspection: Inspection;
 };
 
 export default function InspectionInfo(props: InspectionInfo) {

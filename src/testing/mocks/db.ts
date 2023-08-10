@@ -1,14 +1,6 @@
 import { uid } from "@/utils/uid";
 import { factory, primaryKey } from "@mswjs/data";
 
-export type UserDto = {
-  id: string;
-  name: string;
-  createdAt: number;
-  email: string;
-  password: string;
-};
-
 const models = {
   user: {
     id: primaryKey(uid),

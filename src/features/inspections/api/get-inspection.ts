@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { apiClient } from "@/lib/api-client";
-import { InspectionDto } from "@/testing/mocks/db";
+import { Inspection } from "../types";
 
 type GetInspectionOptions = {
   inspectionId: string;
@@ -9,7 +9,7 @@ type GetInspectionOptions = {
 
 export function getInspection({
   inspectionId,
-}: GetInspectionOptions): Promise<InspectionDto> {
+}: GetInspectionOptions): Promise<Inspection> {
   return apiClient.get(`/inspections/${inspectionId}`);
 }
 
