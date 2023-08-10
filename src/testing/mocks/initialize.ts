@@ -1,13 +1,13 @@
-import { IS_SERVER } from "@/config/constants";
+import { IS_BROWSER, IS_SERVER } from "@/config/constants";
 
 import { seedDb } from "./seed-db";
 
-async function initializeMocks() {
+function initializeMocks() {
   if (IS_SERVER) {
-    const { server } = await import("./server");
+    const { server } = require("./server");
     server.listen();
-  } else {
-    const { worker } = await import("./browser");
+  } else if (IS_BROWSER) {
+    const { worker } = require("./browser");
     worker.start();
   }
   seedDb();
