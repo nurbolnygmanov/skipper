@@ -16,9 +16,20 @@ export default function DashboardInspectionsPage() {
   return (
     <>
       <Seo title="Inspections" />
-      <Link as="button" href={"/dashboard/inspections/create"}>
-        &#8853; Create
-      </Link>
+      <header
+        style={{
+          marginBlock: "2rem",
+          paddingInline: "2rem",
+          display: "flex",
+          alignItems: "center",
+          gap: "1rem",
+        }}
+      >
+        <h3>Inspections</h3>
+        <Link as="button" href={"/dashboard/inspections/create"}>
+          &#8853; Create
+        </Link>
+      </header>
       <InspecitonsList inspections={inspections.data} />
     </>
   );
