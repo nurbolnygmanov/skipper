@@ -1,5 +1,5 @@
 import { Button } from "@/components/button/";
-import InputField from "@/components/form/input-field";
+import { InputField } from "@/components/form/input-field";
 import { useForm } from "react-hook-form";
 import { useLogin } from "../api/login";
 import { AuthUser, LoginData } from "../types";
