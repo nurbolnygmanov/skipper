@@ -14,7 +14,11 @@ export default function LoginData({ onSuccess }: LoginFormProps) {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginData>();
+  } = useForm<LoginData>({
+    defaultValues: {
+      email: "test@test.com",
+    },
+  });
 
   const login = useLogin({ onSuccess });
 
