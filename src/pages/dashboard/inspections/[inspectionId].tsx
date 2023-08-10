@@ -6,7 +6,7 @@ import { useInspection } from "@/features/inspections/api/get-inspection";
 import InspectionInfo from "@/features/inspections/components/inspection-info/inspection-info";
 import { Seo } from "@/components/seo";
 
-const DashboardJobPage = () => {
+export default function DashboardInspectionsPage() {
   const router = useRouter();
   const inspectionId = router.query.inspectionId as string;
 
@@ -26,10 +26,8 @@ const DashboardJobPage = () => {
       <InspectionInfo inspection={inspection.data} />
     </>
   );
-};
+}
 
-DashboardJobPage.getLayout = function getLayout(page: ReactElement) {
+DashboardInspectionsPage.getLayout = function getLayout(page: ReactElement) {
   return <DashboardLayout>{page}</DashboardLayout>;
 };
-
-export default DashboardJobPage;

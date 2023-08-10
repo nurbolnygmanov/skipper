@@ -15,13 +15,13 @@ export const createInspection = ({
   return apiClient.post(`/inspections`, data);
 };
 
-type UseCreateJobOptions = {
+type UseCreateInspectionOptions = {
   onSuccess?: (inspection: Inspection) => void;
 };
 
 export const useCreateInspection = ({
   onSuccess,
-}: UseCreateJobOptions = {}) => {
+}: UseCreateInspectionOptions = {}) => {
   const { mutate: submit, isLoading } = useMutation({
     mutationFn: createInspection,
     onSuccess: (inspection) => {
