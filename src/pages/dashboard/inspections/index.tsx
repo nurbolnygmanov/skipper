@@ -17,7 +17,7 @@ export default function DashboardInspectionsPage() {
     <>
       <Seo title="Inspections" />
       <Link as="button" href={"/dashboard/inspections/create"}>
-        Create
+        &#8853; Create
       </Link>
       <InspecitonsList inspections={inspections.data} />
     </>

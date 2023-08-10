@@ -25,29 +25,32 @@ export function CreateInspectionForm({ onSuccess }: CreateInspectionFormProps) {
     createInspection.submit({ data });
   };
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}
+    >
       <InputField
         label="Name"
         type="text"
         {...register("name", { required: "Please provide name" })}
+        error={errors.name}
       />
-      <ErrorMessage errors={errors} name="name" />
       <InputField
         label="Installation type"
         type="text"
         {...register("installationType", {
           required: "Please provide installatio type",
         })}
+        error={errors.installationType}
       />
-      <ErrorMessage errors={errors} name="installationType" />
       <InputField
         label="Construction year"
         type="text"
         {...register("constructionYear", {
           required: "Please provide construction year",
         })}
+        error={errors.constructionYear}
       />
-      <ErrorMessage errors={errors} name="constructionYear" />
 
       <InputField
         label="Company"
@@ -55,8 +58,8 @@ export function CreateInspectionForm({ onSuccess }: CreateInspectionFormProps) {
         {...register("company", {
           required: "Please provide company",
         })}
+        error={errors.company}
       />
-      <ErrorMessage errors={errors} name="company" />
 
       <InputField
         label="Type"
@@ -64,8 +67,8 @@ export function CreateInspectionForm({ onSuccess }: CreateInspectionFormProps) {
         {...register("type", {
           required: "Please provide type",
         })}
+        error={errors.type}
       />
-      <ErrorMessage errors={errors} name="type" />
 
       <InputField
         label="Diameter"
@@ -73,8 +76,8 @@ export function CreateInspectionForm({ onSuccess }: CreateInspectionFormProps) {
         {...register("diameter", {
           required: "Please provide diameter",
         })}
+        error={errors.diameter}
       />
-      <ErrorMessage errors={errors} name="diameter" />
 
       <InputField
         label="Material"
@@ -82,8 +85,8 @@ export function CreateInspectionForm({ onSuccess }: CreateInspectionFormProps) {
         {...register("material", {
           required: "Please provide material",
         })}
+        error={errors.material}
       />
-      <ErrorMessage errors={errors} name="material" />
 
       <InputField
         label="Coating"
@@ -91,24 +94,26 @@ export function CreateInspectionForm({ onSuccess }: CreateInspectionFormProps) {
         {...register("coating", {
           required: "Please provide coating",
         })}
+        error={errors.coating}
       />
-      <ErrorMessage errors={errors} name="coating" />
 
-      <Button
-        variant="outline"
-        type="submit"
-        disabled={createInspection.isLoading}
-      >
-        Create
-      </Button>
-      <Button
-        variant="danger"
-        type="button"
-        disabled={createInspection.isLoading}
-        onClick={() => router.back()}
-      >
-        Cancel
-      </Button>
+      <div style={{ display: "flex", gap: "1rem" }}>
+        <Button
+          variant="outline"
+          type="submit"
+          disabled={createInspection.isLoading}
+        >
+          Create
+        </Button>
+        <Button
+          variant="danger"
+          type="button"
+          disabled={createInspection.isLoading}
+          onClick={() => router.back()}
+        >
+          Cancel
+        </Button>
+      </div>
     </form>
   );
 }
