@@ -2,12 +2,12 @@ import { IS_BROWSER, IS_SERVER } from "@/config/constants";
 
 import { seedDb } from "./seed-db";
 
-function initializeMocks() {
+async function initializeMocks() {
   if (IS_SERVER) {
-    const { server } = require("./server");
+    const { server } = await import("./server"); // common require gives an error during build
     server.listen();
   } else if (IS_BROWSER) {
-    const { worker } = require("./browser");
+    const { worker } = await import("./browser");
     worker.start();
   }
   seedDb();
