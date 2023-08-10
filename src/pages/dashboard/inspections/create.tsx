@@ -5,12 +5,17 @@ import { Seo } from "@/components/seo";
 import { DashboardLayout } from "@/layouts/dashboard-layout";
 import { CreateInspectionForm } from "@/features/inspections/components/create-form";
 import { Link } from "@/components/link";
+import { useNotifications } from "@/stores/notifications/notification";
 
 export default function DashboardCreateInspectionPage() {
   const router = useRouter();
+  const { showNotification } = useNotifications();
 
   const onSuccess = () => {
-    //show notification
+    showNotification({
+      type: "success",
+      title: "Inspection created",
+    });
     router.push(`/dashboard/inspections`);
   };
 
