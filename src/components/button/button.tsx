@@ -1,5 +1,5 @@
 import { ComponentProps } from "react";
-import styles from "./button.module.css";
+import styles from "./button.module.scss";
 
 export type Variant = "primary" | "danger" | "outline";
 

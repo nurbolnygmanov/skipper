@@ -5,7 +5,7 @@ import { Protected, useUser } from "@/features/auth";
 import { Link } from "@/components/link";
 import { Button } from "@/components/button";
 import { useLogout } from "@/features/auth/api/logout";
-import styles from "./dashboard-layout.module.css";
+import styles from "./dashboard-layout.module.scss";
 import Image from "next/image";
 import logo from "../../public/logo-skipperndt.png";
 
@@ -13,14 +13,27 @@ type DashboardLayoutProps = {
   children: ReactNode;
 };
 
-export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
+// export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
+//   return (
+//     <Protected>
+//       <Header />
+//       <main>{children}</main>
+//     </Protected>
+//   );
+// };
+
+export function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
-    <Protected>
-      <Header />
-      <main>{children}</main>
-    </Protected>
+    <div className={styles.container}>
+      <header className={styles.header}>Header part</header>
+      <div className={styles.content}>
+        <nav className={styles.sidebar}>Navigation</nav>
+
+        <main className={styles.view}>{children}</main>
+      </div>
+    </div>
   );
-};
+}
 
 function Header() {
   const router = useRouter();
