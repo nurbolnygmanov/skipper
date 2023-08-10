@@ -1,5 +1,5 @@
 import { Seo } from "@/components/seo/seo";
-import LoginForm from "@/features/auth/components/login-form";
+import LoginForm from "@/features/auth/components/login-form/login-form";
 import AuthLayout from "@/layouts/auth-layout";
 import { useRouter } from "next/router";
 import { ReactElement } from "react";

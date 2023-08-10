@@ -4,7 +4,7 @@ export * from "./api/login";
 export * from "./api/logout";
 
 // components:
-export * from "./components/login-form";
+export * from "./components/login-form/login-form";
 export * from "./components/protected";
 
 // types:

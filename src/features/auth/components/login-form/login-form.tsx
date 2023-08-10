@@ -1,8 +1,9 @@
 import { Button } from "@/components/button/";
 import { InputField } from "@/components/form/input-field";
 import { useForm } from "react-hook-form";
-import { useLogin } from "../api/login";
-import { AuthUser, LoginData } from "../types";
+import { useLogin } from "../../api/login";
+import { AuthUser, LoginData } from "../../types";
+import styles from "./login-form.module.scss";
 
 export type LoginFormProps = {
   onSuccess: (user: AuthUser) => void;
@@ -22,7 +23,7 @@ export default function LoginData({ onSuccess }: LoginFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles["login-form"]}>
       <InputField
         label="Email"
         type="email"
