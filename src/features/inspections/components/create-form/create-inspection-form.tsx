@@ -11,6 +11,16 @@ type CreateInspectionFormProps = {
   onSuccess: () => void;
 };
 
+const defaultValues = {
+  company: "Test ",
+  coating: "Test",
+  constructionYear: 2023,
+  diameter: "Test",
+  installationType: "Test",
+  material: "Test",
+  type: "Test",
+};
+
 export function CreateInspectionForm({ onSuccess }: CreateInspectionFormProps) {
   const router = useRouter();
   const createInspection = useCreateInspection({ onSuccess });
@@ -19,17 +29,7 @@ export function CreateInspectionForm({ onSuccess }: CreateInspectionFormProps) {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<CreateInspectionData>({
-    defaultValues: {
-      company: "Test ",
-      coating: "Test",
-      constructionYear: 2023,
-      diameter: "Test",
-      installationType: "Test",
-      material: "Test",
-      type: "Test",
-    },
-  });
+  } = useForm<CreateInspectionData>({});
 
   const onSubmit = (data: CreateInspectionData) => {
     createInspection.submit({ data });
