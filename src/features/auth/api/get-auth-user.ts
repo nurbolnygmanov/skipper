@@ -11,7 +11,7 @@ export function getAuthUser(): Promise<AuthUser> {
 export function useUser() {
   const { data, isLoading } = useQuery({
     queryKey: ["auth-user"],
-    queryFn: () => getAuthUser(),
+    queryFn: getAuthUser,
   });
 
   return { data, isLoading };

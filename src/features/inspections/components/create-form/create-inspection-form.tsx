@@ -19,7 +19,17 @@ export function CreateInspectionForm({ onSuccess }: CreateInspectionFormProps) {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<CreateInspectionData>();
+  } = useForm<CreateInspectionData>({
+    defaultValues: {
+      company: "Test ",
+      coating: "Test",
+      constructionYear: 2023,
+      diameter: "Test",
+      installationType: "Test",
+      material: "Test",
+      type: "Test",
+    },
+  });
 
   const onSubmit = (data: CreateInspectionData) => {
     createInspection.submit({ data });

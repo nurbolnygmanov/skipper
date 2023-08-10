@@ -2,9 +2,9 @@
   margin-bottom: 15px;
   table-layout: auto;
   width: 100%;
-  text-align: center;
+  text-align: left;
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: var(--border-radius);
   box-shadow: 0px 0px 40px -15px rgba(179, 179, 181, 1);
   padding: 17px 17px 17px 17px;
   overflow: hidden;

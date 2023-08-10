@@ -4,7 +4,6 @@ import { testData } from "../../testing/test-data";
 
 import { DataTable, DataTableProps } from "./data-table";
 import { Inspection } from "@/features/inspections/types";
-import { baseColumn } from "@/features/inspections/components/inspections-list/inspections-colums";
 import { createColumnHelper } from "@tanstack/react-table";
 import Link from "next/link";
 

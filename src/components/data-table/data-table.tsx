@@ -4,7 +4,7 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import styles from "./data-table.module.css";
+import styles from "./data-table.module.scss";
 
 export type DataTableProps<T> = {
   data: Array<T>;
