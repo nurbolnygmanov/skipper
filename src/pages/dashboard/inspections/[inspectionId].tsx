@@ -6,7 +6,10 @@ import { useInspection } from "@/features/inspections/api/get-inspection";
 import InspectionInfo from "@/features/inspections/components/inspection-info/inspection-info";
 import { Seo } from "@/components/seo";
 
-export default function DashboardInspectionsPage() {
+const containerStyle: React.CSSProperties = {
+  width: "100%",
+};
+export default function DashboardInspectionPage() {
   const router = useRouter();
   const inspectionId = router.query.inspectionId as string;
 
@@ -23,11 +26,13 @@ export default function DashboardInspectionsPage() {
   return (
     <>
       <Seo title={`Inspection | ${inspection.data.name}`} />
-      <InspectionInfo inspection={inspection.data} />
+      <div style={containerStyle}>
+        <InspectionInfo inspection={inspection.data} />
+      </div>
     </>
   );
 }
 
-DashboardInspectionsPage.getLayout = function getLayout(page: ReactElement) {
+DashboardInspectionPage.getLayout = function getLayout(page: ReactElement) {
   return <DashboardLayout>{page}</DashboardLayout>;
 };
