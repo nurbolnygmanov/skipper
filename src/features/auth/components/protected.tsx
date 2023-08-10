@@ -20,5 +20,7 @@ export const Protected = ({ children }: ProtectedProps) => {
     return <p>Loading...</p>;
   }
 
+  if (!user.data && !user.isLoading) return null;
+
   return <>{children}</>;
 };
