@@ -14,7 +14,6 @@
   "dependencies": {
     "@hookform/error-message": "^2.0.1",
     "@mswjs/data": "^0.13.0",
-    "@next/font": "^13.4.13",
     "@tanstack/react-query": "^4.32.6",
     "@tanstack/react-query-devtools": "^4.32.6",
     "@tanstack/react-table": "^8.9.3",

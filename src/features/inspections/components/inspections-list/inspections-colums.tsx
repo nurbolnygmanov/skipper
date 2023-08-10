@@ -11,7 +11,11 @@ export const baseColumn = [
     header: "Name",
     cell: (info) => {
       const rowId = info.row.original.id;
-      return <Link href={`inspections/${rowId}`}>{info.getValue()}</Link>;
+      return (
+        <Link as="link" href={`inspections/${rowId}`}>
+          {info.getValue()}
+        </Link>
+      );
     },
   }),
   columnHelper.accessor((row) => row.company, {
