@@ -68,6 +68,7 @@ describe("Login Page", () => {
         password: "test",
       };
 
+      await user.clear(emailInput);
       await user.type(emailInput, credentials.email);
       await user.type(passwordInput, credentials.password);
       await user.click(submitButton);
