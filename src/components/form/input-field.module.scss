@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.input {
+  height: 3rem;
+  width: 25rem;
+  padding-inline: 1rem;
+  border: 1px solid var(--color-grey-dark-1);
+  font-family: inherit;
+  border-radius: var(--border-radius);
+}
+
+.error {
+  color: red;
+}

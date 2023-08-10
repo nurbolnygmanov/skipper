@@ -3,7 +3,6 @@ import { InputField } from "@/components/form/input-field";
 import { useForm } from "react-hook-form";
 import { useLogin } from "../api/login";
 import { AuthUser, LoginData } from "../types";
-import { ErrorMessage } from "@hookform/error-message";
 
 export type LoginFormProps = {
   onSuccess: (user: AuthUser) => void;
@@ -25,17 +24,17 @@ export default function LoginData({ onSuccess }: LoginFormProps) {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <InputField
-        label="email"
+        label="Email"
         type="email"
+        error={errors["email"]}
         {...register("email", { required: "Please provide email" })}
       />
-      <ErrorMessage errors={errors} name="email" />
       <InputField
-        label="password"
+        label="Password"
         type="password"
+        error={errors["password"]}
         {...register("password", { required: "Please provide password" })}
       />
-      <ErrorMessage errors={errors} name="password" />
       <Button variant="outline" type="submit" disabled={login.isLoading}>
         Log in
       </Button>

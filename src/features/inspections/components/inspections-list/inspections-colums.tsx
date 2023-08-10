@@ -54,13 +54,13 @@ export const tableColumns = ({ deleteRow }: TableColumnProps) =>
       header: "Delete",
       cell: (info) => (
         <Button
-          variant="primary"
+          variant="danger"
           onClick={() => {
             const inspectionId = info.row.original.id;
             deleteRow(inspectionId);
           }}
         >
-          Delete
+          X
         </Button>
       ),
     })

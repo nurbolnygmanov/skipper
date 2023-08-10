@@ -11,7 +11,7 @@ export function Button(props: ButtonProps) {
   const { children, variant, ...restProps } = props;
 
   return (
-    <button className={styles[variant]} {...restProps}>
+    <button className={`${styles.button} ${styles[variant]}`} {...restProps}>
       {children}
     </button>
   );

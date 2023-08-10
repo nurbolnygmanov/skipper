@@ -1,15 +1,40 @@
+.button {
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  border-radius: var(--border-radius);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .primary {
   background-color: blue;
   color: white;
+
+  &:hover {
+    color: blue;
+    background-color: white;
+  }
 }
 
 .outline {
   background-color: white;
   color: blue;
   border: 1px solid blue;
+
+  &:hover {
+    color: white;
+    background-color: blue;
+  }
 }
 
 .danger {
   background-color: red;
   color: white;
+
+  &:hover {
+    color: red;
+    background-color: white;
+  }
 }
