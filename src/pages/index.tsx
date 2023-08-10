@@ -14,11 +14,12 @@ export default function LoginPage() {
   return (
     <>
       <Seo title="Log in" />
+      <h1>Log in</h1>
       <LoginForm onSuccess={onSuccess} />
     </>
   );
 }
 
 LoginPage.getLayout = function (page: ReactElement) {
-  return <AuthLayout title="Log in">{page}</AuthLayout>;
+  return <AuthLayout>{page}</AuthLayout>;
 };

@@ -1,9 +1,9 @@
-import { PropsWithChildren } from "react";
+import { ReactNode } from "react";
 
-type AuthLayoutProps = PropsWithChildren<{ title: string }>;
+type AuthLayoutProps = { children: ReactNode };
 
 export default function AuthLayout(props: AuthLayoutProps) {
-  const { title, children } = props;
+  const { children } = props;
 
   return (
     <div
@@ -17,7 +17,6 @@ export default function AuthLayout(props: AuthLayoutProps) {
           transform: "translate(-50%, -50%)",
         }}
       >
-        <h1>{title}</h1>
         {children}
       </div>
     </div>
