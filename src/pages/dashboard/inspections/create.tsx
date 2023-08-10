@@ -6,7 +6,7 @@ import { DashboardLayout } from "@/layouts/dashboard-layout";
 import { useCreateInspection } from "@/features/inspections/api/create-inspection";
 import { useForm } from "react-hook-form";
 import { CreateInspectionData } from "@/features/inspections/types";
-import InputField from "@/components/form/input-field";
+import { InputField } from "@/components/form/input-field";
 import { ErrorMessage } from "@hookform/error-message";
 import { Button } from "@/components/button";
 

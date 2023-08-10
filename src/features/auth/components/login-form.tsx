@@ -36,10 +36,9 @@ export default function LoginData({ onSuccess }: LoginFormProps) {
         {...register("password", { required: "Please provide password" })}
       />
       <ErrorMessage errors={errors} name="password" />
-      {/* <Button variant="outline" type="submit" disabled={login.isLoading}>
+      <Button variant="outline" type="submit" disabled={login.isLoading}>
         Log in
-      </Button> */}
-      <button type="submit">Log in</button>
+      </Button>
     </form>
   );
 }
