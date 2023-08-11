@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { ReactNode, useEffect } from "react";
 import { useUser } from "../api/get-auth-user";
+import { Loader } from "@/components/loader";
 
 export type ProtectedProps = {
   children: ReactNode;
@@ -17,7 +18,7 @@ export const Protected = ({ children }: ProtectedProps) => {
   }, [user, asPath, replace]);
 
   if (user.isLoading) {
-    return <p>Loading...</p>;
+    return <Loader />;
   }
 
   if (!user.data && !user.isLoading) return null;

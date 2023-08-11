@@ -5,6 +5,7 @@ import { DashboardLayout } from "@/layouts/dashboard-layout";
 import { useInspection } from "@/features/inspections/api/get-inspection";
 import InspectionInfo from "@/features/inspections/components/inspection-info/inspection-info";
 import { Seo } from "@/components/seo";
+import { Loader } from "@/components/loader";
 
 const containerStyle: React.CSSProperties = {
   width: "100%",
@@ -16,7 +17,7 @@ export default function DashboardInspectionPage() {
   const inspection = useInspection({ inspectionId });
 
   if (inspection.isLoading) {
-    return <p>loading</p>;
+    return <Loader />;
   }
 
   if (!inspection.data) {
