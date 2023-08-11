@@ -1,15 +1,9 @@
 import { Link } from "@/components/link";
 import { Inspection } from "../../types";
+import styles from "./inspection-info.module.scss";
 
 export type InspectionInfo = {
   inspection: Inspection;
-};
-
-const cardStyle: React.CSSProperties = {
-  padding: "2rem",
-  maxWidth: "400px",
-  borderRadius: "var(--border-radius)",
-  marginInline: "auto",
 };
 
 export default function InspectionInfo(props: InspectionInfo) {
@@ -25,32 +19,16 @@ export default function InspectionInfo(props: InspectionInfo) {
   } = props.inspection;
 
   return (
-    <div style={cardStyle}>
+    <div className={styles.container}>
       <Link as="link" href="/dashboard/inspections">
         &#9665; Back
       </Link>
-      <header
-        style={{
-          borderBottom: "1px solid gray",
-          display: "flex",
-          justifyContent: "space-between",
-          marginTop: "1rem",
-        }}
-      >
+      <header className={styles.header}>
         <h3>{name}</h3>
         <h3>{company}</h3>
       </header>
       <main>
-        <ul
-          style={{
-            marginTop: "2rem",
-            display: "flex",
-            gap: "4rem",
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-            listStyle: "none",
-          }}
-        >
+        <ul className={styles.list}>
           <li>Coating: {coating}</li>
           <li>Construction year: {constructionYear}</li>
           <li>Diameter: {diameter}</li>

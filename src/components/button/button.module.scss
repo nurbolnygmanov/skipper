@@ -10,33 +10,33 @@
 }
 
 .primary {
-  background-color: blue;
+  background-color: var(--color-medium-blue);
   color: white;
 
   &:hover {
-    color: blue;
+    color: var(--color-medium-blue);
     background-color: white;
   }
 }
 
 .outline {
   background-color: white;
-  color: blue;
-  border: 1px solid blue;
+  color: var(--color-medium-blue);
+  border: 1px solid var(--color-medium-blue);
 
   &:hover {
     color: white;
-    background-color: blue;
+    background-color: var(--color-medium-blue);
   }
 }
 
 .danger {
-  background-color: red;
+  background-color: var(--color-light-pink);
   color: white;
 
   &:hover {
-    color: red;
+    color: var(--color-secondary);
     background-color: white;
-    border: 1px solid red;
+    border: 1px solid var(--color-secondary);
   }
 }

@@ -1,4 +1,7 @@
 .login-form {
+  box-shadow: var(--shadow-dark);
+  padding: 3rem;
+  border-radius: 6px;
   display: flex;
   flex-direction: column;
   gap: 1rem;

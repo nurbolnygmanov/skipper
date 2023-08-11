@@ -1,0 +1,8 @@
+.container {
+  box-shadow: var(--shadow-dark);
+  padding: 2rem;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

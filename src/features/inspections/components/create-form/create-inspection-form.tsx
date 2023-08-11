@@ -3,8 +3,8 @@ import { useCreateInspection } from "../../api/create-inspection";
 import { CreateInspectionData } from "../../types";
 import { InputField } from "@/components/form";
 import { Button } from "@/components/button";
-import { ErrorMessage } from "@hookform/error-message";
 import { useRouter } from "next/router";
+import styles from "./create-inspection.module.scss";
 
 //move to features
 type CreateInspectionFormProps = {
@@ -35,10 +35,7 @@ export function CreateInspectionForm({ onSuccess }: CreateInspectionFormProps) {
     createInspection.submit({ data });
   };
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}
-    >
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.container}>
       <InputField
         label="Name"
         type="text"
